@@ -1,0 +1,170 @@
+/* CSS crunched with Crunch - http://crunchapp.net/ */
+input,
+select {
+  height: 25px;
+}
+input,
+select,
+textarea {
+  width: 200px;
+  padding-left: 5px;
+  border-radius: 5px;
+  border: 1px solid #D9D9D9;
+}
+#addBook {
+  width: 520px;
+  position: fixed;
+  height: 300px;
+  background-color: white;
+  padding: 20px;
+  border-radius: 10px;
+  box-shadow: 0 0 20px black;
+  top: -webkit-calc((100% - 300px) /2);
+  left: -1000px;
+  -webkit-transition: all 0.5s linear;
+}
+#addBook.show {
+  left: -webkit-calc((100% - 520px)/2);
+}
+#addBook label.cover {
+  width: 91px;
+  height: 130px;
+  border: 1px dashed black;
+  box-shadow: 1px 1px 5px black;
+  -webkit-transition: all 0.3s linear;
+  cursor: pointer;
+}
+#addBook label.cover div {
+  width: 100%;
+  height: 100%;
+}
+#addBook label.cover div img {
+  width: 100%;
+  height: 100%;
+}
+#addBook label.cat,
+#addBook label.pub {
+  width: 310px;
+}
+#addBook label.cat .btn,
+#addBook label.pub .btn {
+  float: right;
+  height: 13px;
+  line-height: 13px;
+  margin-left: 2px;
+}
+#addBook label.authors {
+  height: 110px;
+}
+#addBook label.authors .btn {
+  margin-left: 35px;
+  margin-top: 52px;
+  display: block;
+  width: 20px;
+  text-align: center;
+}
+#addBook label.authors select {
+  height: 100px;
+}
+#addBook label.desc {
+  height: 110px;
+  width: 200px;
+}
+#addBook label.desc textarea {
+  height: 100px;
+}
+#editBook {
+  width: 520px;
+  position: fixed;
+  height: 300px;
+  background-color: white;
+  padding: 20px;
+  border-radius: 10px;
+  box-shadow: 0 0 20px black;
+  top: -webkit-calc((100% - 300px) /2);
+  left: -1000px;
+  -webkit-transition: all 0.5s linear;
+}
+#editBook.show {
+  left: -webkit-calc((100% - 520px)/2);
+}
+#editBook label.cover {
+  width: 91px;
+  height: 130px;
+  border: 1px dashed black;
+  box-shadow: 1px 1px 5px black;
+  -webkit-transition: all 0.3s linear;
+  cursor: pointer;
+}
+#editBook label.cover div {
+  width: 100%;
+  height: 100%;
+}
+#editBook label.cover div img {
+  width: 100%;
+  height: 100%;
+}
+#editBook label.cat,
+#editBook label.pub {
+  width: 310px;
+}
+#editBook label.cat .btn,
+#editBook label.pub .btn {
+  float: right;
+  height: 13px;
+  line-height: 13px;
+  margin-left: 2px;
+}
+#editBook label.authors {
+  height: 110px;
+}
+#editBook label.authors .btn {
+  margin-left: 35px;
+  margin-top: 52px;
+  display: block;
+  width: 20px;
+  text-align: center;
+}
+#editBook label.authors select {
+  height: 100px;
+}
+#editBook label.desc {
+  height: 110px;
+  width: 200px;
+}
+#editBook label.desc textarea {
+  height: 100px;
+}
+label {
+  height: 40px;
+  display: block;
+  float: left;
+  width: 280px;
+  font-weight: bold;
+  margin-right: 20px;
+}
+label input,
+label select {
+  float: right;
+}
+section {
+  margin-top: 40px;
+}
+section .content-container table {
+  width: 100%;
+}
+section .content-container table tr {
+  height: 40px;
+  -webkit-transition: all 0.3s linear;
+}
+section .content-container table tr td.price {
+  text-align: right;
+  width: 70px;
+  padding-right: 20px;
+}
+section .content-container table tr:hover {
+  background-color: rgba(255, 255, 255, 0.8);
+}
+#header {
+  color: white;
+}

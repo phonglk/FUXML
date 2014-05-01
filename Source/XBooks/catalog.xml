@@ -1,0 +1,8 @@
+<?xml version="1.0" encoding="UTF-8" standalone="no"?>
+<catalog xmlns="urn:oasis:names:tc:entity:xmlns:xml:catalog" prefer="system">
+    <system systemId="file:/Y:/E/Study/FU/XML/Project/xml110313/Source/XBooks/src/java/XBook/Schemas/Books.xsd" uri="src/conf/xml-resources/jaxb/Books/Books.xsd"/>
+    <system systemId="file:/C:/Users/NoName/Documents/NetBeansProjects/trunk/Source/XBooks/src/java/XBook/Schemas/Books.xsd" uri="src/conf/xml-resources/jaxb/Books/Books.xsd"/>
+    <system systemId="file:/C:/Users/NoName/Documents/NetBeansProjects/trunk/Source/XBooks/src/java/XBook/Schemas/Cart.xsd" uri="src/conf/xml-resources/jaxb/Cart/Cart.xsd"/>
+    <system systemId="file:/E:/Study/FU/XML/Project/xml110313/Source/XBooks/src/java/XBook/Schemas/Books.xsd" uri="src/conf/xml-resources/jaxb/Books/Books.xsd"/>
+    <system systemId="file:/E:/Study/FU/XML/Project/xml110313/Source/XBooks/src/java/XBook/Schemas/Cart.xsd" uri="src/conf/xml-resources/jaxb/Cart/Cart.xsd"/>
+</catalog>

@@ -1,0 +1,109 @@
+input,select{
+    height:25px;
+}
+input,select,textarea{
+    width:200px;
+    padding-left:5px;
+    border-radius:5px;
+    border:1px solid #D9D9D9;
+}
+#addBook{
+    width: 520px;
+    position: fixed;
+    height: 300px;
+    background-color:white;
+    padding: 20px;
+    border-radius: 10px;
+    box-shadow: 0 0 20px black;
+    top: ~"-webkit-calc((100% - 300px) /2)";
+    left:-1000px;
+    -webkit-transition:all 0.5s linear;
+    &.show{
+        left: ~"-webkit-calc((100% - 520px)/2)";
+    }
+    label.cover{
+        width:91px;
+        height:130px;
+        border:1px dashed black;
+        box-shadow: 1px 1px 5px black;
+        -webkit-transition:all 0.3s linear;
+        cursor:pointer;
+        div{
+            width:100%;
+            height:100%;
+            img{
+                width:100%;
+                height:100%;
+            }
+        }
+    }
+    label.cat,
+    label.pub{
+        width:310px;
+        .btn{
+            float: right;
+            height: 13px;
+            line-height: 13px;
+            margin-left: 2px;
+        }
+    }
+    label.authors{
+        height:110px;
+        .btn{
+            margin-left: 35px;
+            margin-top: 52px;
+            display: block;
+            width: 20px;
+            text-align: center;
+        }
+        select{
+            height:100px;
+        }
+    }
+    label.desc{
+        height:110px;
+        width:200px;
+        textarea{
+            height:100px;
+        }
+    }
+}
+#editBook{
+    #addBook;
+}
+label{
+    height:40px;
+    display:block;
+    float:left;
+    width:280px;
+    font-weight:bold;
+    margin-right:20px;
+    input,select{
+        float:right;
+    }
+}
+section{
+    margin-top:40px;
+    .content-container{
+        table{
+            width:100%;
+            tr{
+                height:40px;
+                -webkit-transition:all 0.3s linear;
+                td{
+                    &.price{
+                        text-align:right;
+                        width: 70px;
+                        padding-right: 20px;        
+                    }
+                }
+                &:hover{
+                    background-color:rgba(255,255,255,0.8);
+                }
+            }
+        }
+    }
+}
+#header{
+    color:white;
+}

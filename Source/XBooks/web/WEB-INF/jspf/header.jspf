@@ -1,0 +1,255 @@
+<div id="busy">
+    <img src="./Resources/images/waiting-animate.gif"/>
+</div>
+<div id="troller">
+    <img src="./Resources/images/troller.png"/>
+</div>
+<div id="modal-bg"></div>
+<div class="modal" id="working" data-isModal="true">
+    
+</div>
+<div class="modal" id="login">
+    <div class="close"></div>
+    <form action="Account" method="POST">
+        <label>
+            <input type="text" class="black" placeholder="Username" name="txtUsername" value="" required />
+        </label>
+        <label>
+            <input type="password" class="black" placeholder="Password" name="txtPassword" value="" required />
+        </label>
+        <span class="error"></span>
+        <input type="submit" name="action" class="hidden" value="login" />
+        <a href="javascript:void(0)" class="btn submit" data-submitform>Login</a>
+    </form>
+</div>
+<div class="modal" id="register">
+    <div class="close"></div>
+    <form action="Account" method="POST">
+        <label>
+            <input type="text" class="black" placeholder="Username"  name="txtUsername" value="" pattern="[\w\d]{4,10}" title="Your user name must be in 4 - 10 characters" required />
+        </label>
+        <label>
+            <input type="password" class="black" placeholder="Password" name="txtPassword" value="" pattern=".{6,10}" title="Your password must be in 6 - 10 characters" required />
+        </label>
+        <label>
+            <input type="password" class="black" placeholder="Password Again" name="txtRePassword" pattern=".{6,10}" title="The re-enter password must be matched" value="" required />
+        </label>
+        <label>
+                <input type="email"  class="black" placeholder="Email"  name="txtEmail" value="" required/>
+        </label>
+        <label>
+            <input type="checkbox" class="option-check">
+            Enter more information for check out(optional)
+        </label>
+        <div class="optional" data-bind="enterOptional:condition(true)">
+            <label>
+                <input type="text"  class="black" placeholder="Full name"  name="txtFullName" value="" />
+            </label>
+
+            <label>
+                <input type="text" class="black" placeholder="Phone" pattern="0[0-9]{9,10}" title="10-11 Number e.g: 09876....,0123.... " name="txtPhone" value="" />
+            </label>
+            <label>
+                <input type="text" class="black" placeholder="Address" pattern=".{0,250}"   name="txtAddress" value="" title="Your address, 250 characters" />
+            </label>
+        </div>
+        <span class="error"></span>
+        <input type="submit" name="action" class="hidden" value="register" />
+        <a href="javascript:void(0)" class="btn submit"  data-submitform>Register</a>
+    </form>
+</div>
+<div class="modal" id="book-detail" data-bind="Book">
+    <div class="close"></div>
+    <div style="overflow:hidden;width:100%;height:100%">
+        <div data-bind="Id:attr(data-id)"></div>
+        <img src="Resources/images/covers/1.jpg" class="cover" data-bind="ImageUrl:attr(src)"/>
+        <div class="label category" data-bind="Category">JAVA</div>
+        <div class="ISBN">
+            <strong>ISBN:</strong> <span class="isbn-value" data-bind="ISBN">0000000000000</span>
+        </div> 
+        <div class="Title" data-bind="Title">Head First Object-Oriented Analysis and Design</div>
+        <div class="Authors">
+            <strong style="float:left">Authors: </strong>
+            <div class="authors-value" data-bind="Authors:for-each">
+                <span data-bind="value"></span>
+                <span data-bind="isLast:condition(false)">,</span>
+            </div>
+        </div>
+        <div class="Publisher">
+            <strong>Publisher: &nbsp;</strong> <span class="publisher-value" data-bind="Publisher">O'Reilly</span>
+        </div>
+        <div class="Description" data-bind="Description">
+            Head First Object Oriented Analysis and Design is a refreshing look at subject of OOAD. What sets this book apart is its focus on learning. The authors have made the content of OOAD accessible and usable for the practitioner.
+            <br/>
+            Head First Object Oriented Analysis and Design is a refreshing look at subject of OOAD. What sets this book apart is its focus on learning. The authors have made the content of OOAD accessible and usable for the practitioner.
+        </div>
+        <div class="Price">
+            <span class="prive-value" data-bind="Price">28.97</span>$&nbsp;&nbsp;&nbsp;<span style="font-size:smaller">X</span>
+        </div>
+        <input type="number" class="quantity" value="1" min="1" max="10" />
+        <a href="javascript:void(0)" class="btn add-cart">Add to cart</a>
+    </div>
+</div>
+<div class="modal" id="searchPage">
+    <div class="close"></div>
+    <div class="content">
+        <div class="search-result">
+            <img class="cover" src="Resources/images/covers/OS.jpg"/>
+            <div class="title">Modern Operating Systems (3rd Edition)</div>
+            <div class="authors"> Andrew S.Tanenbaum, Andrew S.Tanenbaum</div>
+            <div class="description">
+                The widely anticipated revision of this worldwide best-seller incorporates the latest developments in operating systems technologies.  The Third Edition includes up-to-date materials on relevant operating systems such as Linux, Windows, and embedded
+            </div>
+        </div>
+    </div>
+</div>
+<div class="modal" id="checkoutPage">
+    <div class="close"></div>
+    <h1>Your shopping cart</h1>
+    <h3>Please review your cart before checkout</h3>
+    <table border="0">
+        <thead>
+            <tr>
+                <th class="idx">#</th>
+                <th>Title</th>
+                <th>Price($)</th>
+                <th>Qty</th>
+                <th></th>
+            </tr>
+        </thead>
+        <tbody data-bind="books:for-each">
+            <tr>
+                <td data-bind="meta-idx-num" class="idx"></td>
+                <td class="title"> 
+                    <div data-bind="title"></div>
+                <td data-bind="price" class="price"></td>
+                <td class="quantity">
+                    <input type="number" min="1" max="10" data-bind="quantity:editable"/>
+                </td>
+                <td>
+                    <a href="javascript:void(0)" class="delete" data-bind="id:click(Order.remove)">
+                        <img src="./Resources/images/trash.png" width="24px"/>
+                    </a>
+                </td>
+            </tr>
+        </tbody>
+        <tfoot>
+            <tr>
+                <td class="idx">#</td>
+                <td class="title">Total:</td>
+                <td class="price">
+                    <span data-bind="totalPrice"></span>$
+                </td>
+                <td></td>
+                <td></td>
+            </tr>
+        </tfoot>
+    </table>
+    <br/>
+    <div style="float:right">
+        <a href="javascript:void(0)" class="btn error confirm-checkout">Check out</a>
+    </div>
+</div>
+<div class="modal" id="confirm-information">
+    <div class="close"></div>
+    <form action="" method="">
+        <h1>Your last step!</h1>
+        <label>
+            Full name:
+            <input type="text"  class="" placeholder="Receiver's name ..."  name="txtContactName" value="" required title="Receiver name" />
+        </label>
+        <label>
+            Phone:
+            <input type="text" class="" placeholder="Receiver's phone ..." pattern="0[0-9]{9,10}" title="Receiver's phone numner. 10-11 Number e.g: 09876....,0123.... " name="txtPhone" value="" required />
+        </label>
+        <label>
+            Address:
+            <input type="text" class="" placeholder="This package will send to ..." pattern=".{1,250}"   name="txtAddress" value="" title="Receiver's address, 250 characters" required />
+        </label>
+        <input type="hidden" name="stringXmlCart" value="" />
+        <input type="hidden" name="txtTotal" value="" />
+        <input type="submit" name="action" class="hidden" value="checkOut" />
+        <a href="javascript:void(0)" class="btn submit" data-submitform>Confirm</a>
+        <a href="#checkout" class="btn review" >Review checkout</a>
+    </form>
+</div>
+<div class="modal" id="view-order">
+    <div class="close"></div>
+    <form action="" method="">
+        <h1>View your order</h1>
+        <label>
+            Contact Name:
+            <input type="text"  class="" placeholder="Receiver's name ..."  name="contactName" value="" required title="Receiver name" />
+        </label>
+        <label>
+            CODE :
+            <input type="text" class="" placeholder=" Code of your order" pattern="[\w\d]{5}"   name="code" value="" title="Your code in 5 characters" required />
+        </label>
+        <input type="submit" name="action" class="hidden" value="view-order" />
+        <a href="javascript:void(0)" class="btn submit" data-submitform>View</a>
+    </form>
+</div>
+<div class="modal" id="order-success">
+    <div class="close"></div>
+    <center>
+        <img src="./Resources/images/success.png" style="width:120px"/><br/>
+        <div style="font-size:15px;line-height: 18px">Your order have been processing and will be delivered soon!<br/>You can download your order as a copy below(PDF)</div>
+        <br/>
+        <a href="#" class="pdf-link" target="_blank">
+            <img src="./Resources/images/download-pdf.png"  style="width:50px"/>
+        </a>
+    </center>
+</div>
+<div class="message">
+    <div class="content">
+        This is a message
+    </div>
+    <div class="dismiss">
+        <a href="javascript:void(0)">Dismiss</a>
+    </div>
+</div>
+
+<div class="page-wrapper">
+        <header>
+            <a id="logo"></a>
+            <img src="./Resources/images/slogan.png" id="slogan">
+            <div class="user-area">
+                <!--Hello Phong <img src="images/icon-user.png"/>-->
+                <div class="not-login" data-bind="isLogged:condition(false)">
+                Please <a href="#register">Register</a> or <a href="#login">Login</a>
+                </div>
+                <div class="logged-in" data-bind="isLogged:condition(true)">
+                    Hello <strong><span class="user" data-bind="username"></span></strong> !
+                    , <a href="javascript:void(0)" id="logout"> Logout </a>
+                </div>
+            </div>
+        </header>
+        <nav>
+            <ul>
+                <li>
+                    <a href="index.jsp">Home</a>
+                </li>
+                <li>
+                    <a href="#">About</a>
+                </li>
+                <li>
+                    <a href="#view-order">View your order</a>
+                </li>
+                <c:set var="isAdmin" value="${sessionScope.USER.isAdmin}"/>
+                    <c:if test="${isAdmin}">
+                        <li class="admin-menu">
+                            <a href="Admin">Admin CP</a>
+                        </li>
+                    </c:if>
+            </ul>
+            <div class="search-area">
+                <form method="POST" action="Controller">
+                    <input type="submit" name="action" class="hidden" value="search" />
+                    <input type="text" placeholder="Search..." name="txtTitle" pattern=".{0,100}" required title="What do you want to search ? Please do not over 100 characters">
+                    &nbsp;
+                    <a href="#" class="btn" data-submitform><img src="./Resources/images/icon-magnifier.png"></a>
+                    &nbsp;
+                </form>
+            </div>
+        </nav>
+    </div>

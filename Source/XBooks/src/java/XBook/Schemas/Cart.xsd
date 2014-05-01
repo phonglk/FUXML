@@ -1,0 +1,28 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<xsd:schema xmlns:xsd="http://www.w3.org/2001/XMLSchema"
+    targetNamespace="http://xml.netbeans.org/schema/Cart"
+    xmlns="http://xml.netbeans.org/schema/Cart"
+    elementFormDefault="qualified">
+
+    <xsd:simpleType name="Quantity">
+        <xsd:restriction base="xsd:positiveInteger">
+            <xsd:maxInclusive value="10"/>
+        </xsd:restriction>
+    </xsd:simpleType>
+
+    <xsd:element name="Cart">
+        <xsd:complexType>
+            <xsd:sequence>
+                <xsd:element name="Item" maxOccurs="10">
+                    <xsd:complexType>
+                        <xsd:all>
+                            <xsd:element name="Quantity" type="Quantity"/>
+                            <xsd:element name="bookId" type="xsd:string"/>
+                        </xsd:all>
+                    </xsd:complexType>
+                </xsd:element>
+            </xsd:sequence>
+        </xsd:complexType>
+    </xsd:element>
+</xsd:schema>

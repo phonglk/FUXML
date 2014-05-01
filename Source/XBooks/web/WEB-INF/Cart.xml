@@ -1,0 +1,48 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<!--
+    Document   : Cart.xml
+    Created on : March 28, 2013, 10:46 PM
+    Author     : PhongLK
+    Description:
+        Purpose of the document follows.
+-->
+
+<Cart>
+    <Item>
+        <Quantity>4</Quantity>
+        <bookId>7</bookId>
+    </Item>
+    <Item>
+        <Quantity>6</Quantity>
+        <bookId>2</bookId>
+    </Item>
+    <Item>
+        <Quantity>3</Quantity>
+        <bookId>1</bookId>
+    </Item>
+    <Item>
+        <Quantity>3</Quantity>
+        <bookId>3</bookId>
+    </Item>
+    <Item>
+        <Quantity>3</Quantity>
+        <bookId>4</bookId>
+    </Item>
+    <Item>
+        <Quantity>3</Quantity>
+        <bookId>5</bookId>
+    </Item>
+    <Item>
+        <Quantity>2</Quantity>
+        <bookId>6</bookId>
+    </Item>
+    <Item>
+        <Quantity>2</Quantity>
+        <bookId>8</bookId>
+    </Item>
+    <Item>
+        <Quantity>1</Quantity>
+        <bookId>9</bookId>
+    </Item>
+</Cart>

@@ -1,0 +1,25 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<project version="4">
+  <component name="LessManager">
+    <option name="lessProfiles">
+      <map>
+        <entry key="less">
+          <value>
+            <LessProfile>
+              <option name="cssDirectories">
+                <list>
+                  <CssDirectory>
+                    <option name="path" value="E:\Study\FU\XML\Project\xml110313\Source\XBooks\web\Resources\css" />
+                  </CssDirectory>
+                </list>
+              </option>
+              <option name="lessDirPath" value="E:\Study\FU\XML\Project\xml110313\Source\XBooks\web\Resources\less" />
+              <option name="name" value="less" />
+            </LessProfile>
+          </value>
+        </entry>
+      </map>
+    </option>
+  </component>
+</project>
+

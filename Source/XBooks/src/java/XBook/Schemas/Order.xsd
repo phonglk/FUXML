@@ -1,0 +1,66 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<xsd:schema xmlns:xsd="http://www.w3.org/2001/XMLSchema"
+    targetNamespace="http://xml.netbeans.org/schema/Order"
+    xmlns="http://xml.netbeans.org/schema/Order"
+    elementFormDefault="qualified">
+
+
+    <xsd:simpleType name="Created">
+        <xsd:restriction base="xsd:string">
+            <xsd:pattern value="^[0-9]{4}-(((0[13578]|(10|12))-(0[1-9]|[1-2][0-9]|3[0-1]))|(02-(0[1-9]|[1-2][0-9]))|((0[469]|11)-(0[1-9]|[1-2][0-9]|30)))$"/>
+        </xsd:restriction>
+    </xsd:simpleType>
+    
+    <xsd:simpleType name="Phone">
+        <xsd:restriction base="xsd:string">
+            <xsd:pattern value="^0[0-9]{9,10}"/>
+        </xsd:restriction>
+    </xsd:simpleType>
+
+    <xsd:simpleType name="Address">
+        <xsd:restriction base="xsd:string">
+            <xsd:maxLength value="250"/>
+        </xsd:restriction>
+    </xsd:simpleType>
+
+    <xsd:simpleType name="Price">
+        <xsd:restriction base="xsd:decimal">
+            <xsd:minInclusive value="0"/>
+            <xsd:fractionDigits value="2"/>
+        </xsd:restriction>
+    </xsd:simpleType>
+
+    <xsd:element name="Order">
+        <xsd:complexType>
+            <xsd:sequence>
+                <xsd:element name="Created" type="Created"/>
+                <xsd:element name="ImageURL" type="xsd:string"/>
+                <xsd:element name="OrderCode" type="xsd:string"/>
+                <xsd:element name="ContactName" type="xsd:string"/>
+                <xsd:element name="Phone" type="Phone"/>
+                <xsd:element name="Address" type="Address"/>
+                <xsd:element name="Total" type="Price"/>
+                <xsd:element name="OrderDetails">
+                    <xsd:complexType >
+                        <xsd:sequence>
+                            <xsd:element name="OrderDetail" maxOccurs="unbounded" type="OrderDetail"/>
+                        </xsd:sequence>
+                    </xsd:complexType>
+                </xsd:element>
+            </xsd:sequence>
+        </xsd:complexType>
+    </xsd:element>
+ 
+    
+    <xsd:complexType name="OrderDetail">
+        <xsd:sequence>
+            <xsd:element name="Title" type="xsd:string"/>
+            <xsd:element name="Quantity" type="xsd:positiveInteger"/>
+            <xsd:element name="Price" type="Price"/>
+            <xsd:element name="TotalType" type="Price"/>
+        </xsd:sequence>
+        <xsd:attribute name="ID" type="xsd:int"/>
+    </xsd:complexType>
+
+</xsd:schema>

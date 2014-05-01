@@ -1,0 +1,73 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<xsd:schema xmlns:xsd="http://www.w3.org/2001/XMLSchema"
+    targetNamespace="http://xml.netbeans.org/schema/Books"
+    xmlns="http://xml.netbeans.org/schema/Books"
+    elementFormDefault="qualified">
+
+    <xsd:simpleType name="ISBN">
+        <xsd:restriction base="xsd:string">
+            <xsd:pattern value="[0-9]{13}"/>
+        </xsd:restriction>
+    </xsd:simpleType>
+
+    <xsd:simpleType name="Price">
+        <xsd:restriction base="xsd:decimal">
+            <xsd:minInclusive value="0"/>
+            <xsd:fractionDigits value="2"/>
+        </xsd:restriction>
+    </xsd:simpleType>
+
+    <xsd:complexType name="Category">
+        <xsd:all>
+            <xsd:element name="Id" type="xsd:string"/>
+            <xsd:element name="Name" type="xsd:string"/>
+            <xsd:element name="Description" type="xsd:string"/>
+        </xsd:all>
+    </xsd:complexType>
+
+    <xsd:complexType name="Publisher">
+        <xsd:all>
+            <xsd:element name="Id" type="xsd:string"/>
+            <xsd:element name="Name" type="xsd:string"/>
+            <xsd:element name="Description" type="xsd:string"/>
+        </xsd:all>
+    </xsd:complexType>
+
+    <xsd:complexType name="Authors">
+         <xsd:sequence>
+             <xsd:element name="Author" maxOccurs="unbounded">
+                 <xsd:complexType>
+                    <xsd:all>
+                        <xsd:element name="Id" type="xsd:string"/>
+                        <xsd:element name="Name" type="xsd:string"/>
+                        <xsd:element name="Description" type="xsd:string"/>
+                    </xsd:all>
+                </xsd:complexType>
+             </xsd:element>
+         </xsd:sequence>
+    </xsd:complexType>
+
+    <xsd:complexType name="Book">
+        <xsd:all>
+            <xsd:element name = "Id" type="xsd:string"/>
+            <xsd:element name = "ISBN" type="ISBN"/>
+            <xsd:element name="Title" type="xsd:string"/>
+            <xsd:element name="Publisher" type="Publisher"/>
+            <xsd:element name="Authors" type="Authors"/>
+            <xsd:element name="Category" type="Category"/>
+            <xsd:element name="Price" type="Price"/>
+            <xsd:element name="Description" type="xsd:string"/>
+            <xsd:element name="ImageUrl" type="xsd:string"/>
+        </xsd:all>
+    </xsd:complexType>
+
+    <xsd:element name="Books">
+        <xsd:complexType>
+            <xsd:sequence>
+                <xsd:element name="Book" maxOccurs="unbounded" type="Book"/>
+            </xsd:sequence>
+        </xsd:complexType>
+    </xsd:element>
+    
+</xsd:schema>

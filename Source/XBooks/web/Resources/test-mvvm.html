@@ -1,0 +1,49 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <title></title>
+    <script src="js/NodeHelper.js"></script>
+    <script src="js/utils.js"></script>
+    <script src="js/mvvm.js"></script>
+    <script>
+        var Students=[{
+            name:mvvm.changeable("Phong"),
+            score:8.3,
+            class:"SE0566",
+            subject:mvvm.changeable([{name:"SAD"},{name:"XML"}]),
+            isPassed:false
+        },{
+            name:"Phong2",
+            score:8.7,
+            class:"SE0567",
+            subject:[{name:"SADA"},{name:"XMLX"}],
+            isPassed:true
+        }
+        ]
+        var total=mvvm.changeable(function(){
+            return Students[0].name()+" "+Students[1].name;
+        })
+        onLoad(function(){
+            applyBindings(Students,$(".students"));
+            applyBindings(total,$(".total"));
+        })
+    </script>
+</head>
+<body>
+<span class="students" data-bind="Students:for-each">
+        <div class="student">
+            <br/>Student
+            <br/>Name: <span data-bind="name"></span>
+            <br/>Score: <span data-bind="score"></span>
+            <br/>Class: <span data-bind="class"></span>
+            <br/>Subjects: <span data-bind="subject:for-each">
+                <span data-bind="name"></span>
+                <span data-bind="meta-isLast:condition(false)">,</span>
+            </span>
+            <br/>isPassed: <span data-bind="isPassed:condition(true)">passed</span>
+        </div>
+
+</span>
+    <div class="total" data-bind="total"></div>
+</body>
+</html>
